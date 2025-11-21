@@ -1,6 +1,6 @@
-from Datos import Datos
+from Datos import Datos 
 from Lista import agregar, consultar, modificar, eliminar
-while True:
+while True: # Bucle infinito para el menú
     print("                         ")
     print("-----Menú de opciones-----")
     print("1. Agregar")
@@ -12,7 +12,7 @@ while True:
     opcion = input("Seleccione una opción: ")
     print("                           ")
 
-    if opcion == "1":
+    if opcion == "1": #
         agregar()
     if opcion == "2":
         consultar()
