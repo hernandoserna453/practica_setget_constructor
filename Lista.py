@@ -1,8 +1,7 @@
-
 class Datos:
     def __init__(self, nombre, apellido, documento, edad, correo, ciudad, pais):# Constructor con parámetros
-        self.nombre = nombre # 
-        self.apellido = apellido# 
+        self.nombre = nombre  
+        self.apellido = apellido
         self.documento = documento
         self.edad = edad
         self.correo = correo
@@ -36,25 +35,20 @@ def agregar():# Agrega un nuevo objeto Datos a la lista
     print("Datos guardados exitosamente.")
 
 
-def consultar():# Consulta y muestra todos los objetos Datos en la lista
-    if not lista_datos:# Verifica si la lista está vacía
-        print("No hay datos para mostrar.")
-        return# Si está vacía, retorna
+def consultar(): #Funcion para concultar los datos por el numero de documento
+    documento = int(input("Ingrese el número de documento a consultar: ")) # Se solicita el numero de identificacion
 
-    print("--- CONSULTA DE DATOS ---")
-    for i, dato in enumerate(lista_datos):# Recorre la lista con índice
-        print(f"""
-Registro {i + 1}
-Nombre: {dato.nombre}
-Apellidos: {dato.apellido}
-Documento: {dato.documento}
-Edad: {dato.edad}
-Correo: {dato.correo}
-Ciudad: {dato.ciudad}
-País: {dato.pais}
-""")
-    print("---------------------------------------")
-
+    for datos in lista_datos: #Recorre los datos en la lista de datos
+        if datos.documento == documento: # Compara datos.documento con documento 
+            print("----- Datos encontrados -----") #Aqui muestra los datos si hay datos con el numero de identificacion
+            print(f"Nombre: {datos.nombre}")
+            print(f"Apellido: {datos.apellido}")
+            print(f"Edad: {datos.edad}")
+            print(f"Correo: {datos.correo}")
+            print("-----------------------------")
+            return 
+    print("No se encontró un registro con ese numero de documento.") #Si no se encuentran datos aparece este mensaje
+    print("-----------------------------")
 
 def modificar():# Modifica un objeto Datos en la lista
     consultar()# Muestra los datos existentes
@@ -95,10 +89,3 @@ def eliminar():# Elimina un objeto Datos de la lista
         print("Registro eliminado exitosamente.")
     else:
         print("Índice inválido.")
-
-
-
-
-
-
-        
